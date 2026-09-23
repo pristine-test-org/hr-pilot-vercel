@@ -1,0 +1,8 @@
+allowBuilds:
+  '@prisma/engines': true
+  # Optional peer of the prisma CLI (only for `prisma dev`); this app uses Postgres, so never build it.
+  better-sqlite3: false
+  esbuild: true
+  prisma: true
+  sharp: true
+  unrs-resolver: true

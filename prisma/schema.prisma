@@ -1,0 +1,125 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  EMPLOYEE
+}
+
+enum LeaveType {
+  ANNUAL
+  SICK
+  UNPAID
+}
+
+enum RequestStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum ClaimCategory {
+  FOOD
+  TRAVEL
+  MEDICAL
+  OTHER
+}
+
+model User {
+  id              String   @id @default(cuid())
+  name            String
+  email           String   @unique
+  username        String   @unique
+  passwordHash    String
+  role            Role     @default(EMPLOYEE)
+  jobTitle        String
+  department      String
+  dateJoined      DateTime
+  annualLeaveDays Int      @default(14)
+  sickLeaveDays   Int      @default(14)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  sessions           Session[]
+  leaveRequests      LeaveRequest[]      @relation("LeaveRequestsByUser")
+  decidedLeaves      LeaveRequest[]      @relation("LeaveRequestsDecidedBy")
+  claims             Claim[]             @relation("ClaimsByUser")
+  decidedClaims      Claim[]             @relation("ClaimsDecidedBy")
+  payslips           Payslip[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model LeaveRequest {
+  id          String        @id @default(cuid())
+  userId      String
+  type        LeaveType
+  startDate   DateTime
+  endDate     DateTime
+  days        Float
+  reason      String
+  status      RequestStatus @default(PENDING)
+  decidedById String?
+  decidedAt   DateTime?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  user      User  @relation("LeaveRequestsByUser", fields: [userId], references: [id], onDelete: Cascade)
+  decidedBy User? @relation("LeaveRequestsDecidedBy", fields: [decidedById], references: [id])
+
+  @@index([userId])
+}
+
+model Claim {
+  id          String        @id @default(cuid())
+  userId      String
+  category    ClaimCategory
+  amount      Float
+  description String
+  date        DateTime
+  status      RequestStatus @default(PENDING)
+  decidedById String?
+  decidedAt   DateTime?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  user      User  @relation("ClaimsByUser", fields: [userId], references: [id], onDelete: Cascade)
+  decidedBy User? @relation("ClaimsDecidedBy", fields: [decidedById], references: [id])
+
+  @@index([userId])
+}
+
+model Payslip {
+  id           String   @id @default(cuid())
+  userId       String
+  month        String
+  basicSalary  Float
+  allowances   Float
+  deductions   Float
+  netPay       Float
+  generatedAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, month])
+  @@index([userId])
+}
