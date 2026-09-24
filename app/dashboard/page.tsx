@@ -84,7 +84,7 @@ export default async function DashboardOverviewPage() {
                 <ClipboardCheck className="h-5 w-5" />
               </div>
               <div>
-                <p className="font-medium">Approvals waiting on you</p>
+                <p className="font-medium">Team approvals waiting on you</p>
                 <p className="text-sm text-muted-foreground">
                   {orgPendingLeaves} leave request{orgPendingLeaves === 1 ? "" : "s"} and{" "}
                   {orgPendingClaims} claim{orgPendingClaims === 1 ? "" : "s"} across the team need a
