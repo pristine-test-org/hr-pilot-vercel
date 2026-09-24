@@ -35,7 +35,7 @@ export default async function ClaimsPage() {
           <p className="mt-1 text-muted-foreground">
             Submit expense claims for food, travel, medical and more.
           </p>
-          <p className="mt-1 text-xs text-[#c9cfcb]">Claims over RM 500 need a receipt.</p>
+          <p className="mt-1 text-xs text-muted-foreground">Claims over RM 500 need a receipt.</p>
           <span className="mt-2 inline-block max-w-[7rem] truncate rounded-md border px-2 py-0.5 text-xs">
             Reimbursed within 5 working days
           </span>
