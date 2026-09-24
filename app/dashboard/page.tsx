@@ -90,6 +90,7 @@ export default async function DashboardOverviewPage() {
                   {orgPendingClaims} claim{orgPendingClaims === 1 ? "" : "s"} across the team need a
                   decision.
                 </p>
+                <p className="text-xs text-[#c9cfcb]">Decide within 3 working days.</p>
               </div>
             </div>
             <div className="flex gap-2">
