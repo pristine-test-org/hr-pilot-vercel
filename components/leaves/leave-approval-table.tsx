@@ -93,9 +93,9 @@ export function LeaveApprovalTable({ leaves }: { leaves: LeaveRow[] }) {
                 {leave.status === "PENDING" ? (
                   <div className="flex justify-end gap-2">
                     <Button
-                      size="icon"
+                      size="sm"
                       variant="outline"
-                      className="h-8 w-8 border-emerald-200 text-emerald-600 hover:bg-emerald-50 hover:text-emerald-700"
+                      className="h-8 border-emerald-200 text-emerald-600 hover:bg-emerald-50 hover:text-emerald-700"
                       disabled={isPending && pendingId === leave.id}
                       onClick={() => decide(leave.id, "APPROVED")}
                     >
@@ -104,15 +104,17 @@ export function LeaveApprovalTable({ leaves }: { leaves: LeaveRow[] }) {
                       ) : (
                         <Check className="h-4 w-4" />
                       )}
+                      Approve
                     </Button>
                     <Button
-                      size="icon"
+                      size="sm"
                       variant="outline"
-                      className="h-8 w-8 border-rose-200 text-rose-600 hover:bg-rose-50 hover:text-rose-700"
+                      className="h-8 border-rose-200 text-rose-600 hover:bg-rose-50 hover:text-rose-700"
                       disabled={isPending && pendingId === leave.id}
                       onClick={() => decide(leave.id, "REJECTED")}
                     >
                       <X className="h-4 w-4" />
+                      Reject
                     </Button>
                   </div>
                 ) : (
