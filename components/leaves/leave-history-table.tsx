@@ -17,7 +17,7 @@ export function LeaveHistoryTable({ leaves }: { leaves: LeaveRow[] }) {
   if (leaves.length === 0) {
     return (
       <div className="rounded-xl border border-dashed py-12 text-center text-sm text-muted-foreground">
-        No leave requests yet. Apply for your first leave to see it here.
+        You haven&apos;t taken any leave yet. Use Apply for leave to request your first days off.
       </div>
     );
   }
