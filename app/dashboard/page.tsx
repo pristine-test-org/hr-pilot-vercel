@@ -45,7 +45,7 @@ export default async function DashboardOverviewPage() {
           Welcome back, {user.name.split(" ")[0]}
         </h1>
         <p className="mt-1 text-muted-foreground">
-          Here&apos;s what&apos;s happening with your HR account today.
+          Your leave, claims and pay at a glance.
         </p>
       </div>
 
