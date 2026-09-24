@@ -33,7 +33,7 @@ export default async function ClaimsPage() {
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Claims</h1>
           <p className="mt-1 text-muted-foreground">
-            Submit expense claims for food, travel, medical and more.
+            Submit expense claims for food, travel, medical and other work costs.
           </p>
         </div>
         <SubmitClaimDialog />
