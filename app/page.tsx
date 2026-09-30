@@ -87,6 +87,9 @@ export default function LandingPage() {
                 Log in to your workspace
                 <ArrowRight className="h-4 w-4" />
               </Link>
+              <Link href="/impeccable-test-drive" className={cn(buttonVariants({ size: "lg", variant: "outline" }))}>
+                Leave policy highlights
+              </Link>
             </div>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
               {HIGHLIGHTS.map((point) => (

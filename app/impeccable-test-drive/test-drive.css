@@ -1,0 +1,19 @@
+.td-page { min-height: 100vh; background: #fff; }
+.td-main { padding: 4rem 0; }
+.td-heading {
+  padding: 0 1.5rem;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  background: linear-gradient(90deg, #6d28d9, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.td-edge-text { margin: 1.5rem 0; padding: 0; max-width: none; }
+.td-faint { padding: 0 1.5rem; color: #cfcfcf; }
+.td-card { margin: 2rem 1.5rem; padding: 1.5rem; border-radius: 1rem; background: #ffe4a8; }
+.td-bar { margin: 1rem 1.5rem; height: 0.5rem; width: 4rem; background: #4338ca; transition: width 0.3s; }
+.td-bar:hover { width: 16rem; }
+.td-links { display: flex; gap: 1.5rem; padding: 0 1.5rem; }
+.td-tiny-link { font-size: 10px; }
