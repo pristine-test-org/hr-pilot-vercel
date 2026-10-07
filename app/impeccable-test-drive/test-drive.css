@@ -1,0 +1,44 @@
+.td-page {
+  padding: 2rem 0;
+}
+.td-heading {
+  padding: 0 1rem;
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  background-image: linear-gradient(90deg, #7c3aed, #ec4899);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.td-edge {
+  margin: 1rem 0;
+  padding: 0;
+}
+.td-faint {
+  padding: 0 1rem;
+  color: #c4c4c4;
+  background: #ffffff;
+}
+.td-actions {
+  padding: 1rem;
+}
+.td-small-link {
+  font-size: 10px;
+  text-decoration: underline;
+}
+.td-bar {
+  height: 6px;
+  width: 40%;
+  margin-top: 0.75rem;
+  background: oklch(0.47 0.17 264);
+  transition: width 0.3s;
+}
+.td-bar:hover {
+  width: 80%;
+}
+.td-offpalette {
+  padding: 0 1rem;
+  color: #b45309;
+}
