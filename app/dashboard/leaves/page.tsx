@@ -43,6 +43,15 @@ export default async function LeavesPage() {
         <ApplyLeaveDialog />
       </div>
 
+      {isAdmin && pendingCount > 0 ? (
+        <div className="flex items-center gap-3 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-100">
+          <Badge variant="secondary">{pendingCount}</Badge>
+          <span>
+            {pendingCount === 1 ? "One request is" : `${pendingCount} requests are`} waiting for your approval.
+          </span>
+        </div>
+      ) : null}
+
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <StatCard
           icon={CalendarDays}
