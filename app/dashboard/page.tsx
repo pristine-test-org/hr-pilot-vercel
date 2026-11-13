@@ -49,6 +49,14 @@ export default async function DashboardOverviewPage() {
         </p>
       </div>
 
+      {pendingLeaveCount + pendingClaimCount > 0 ? (
+        <div className="rounded-lg border bg-muted/40 px-4 py-3 text-sm">
+          You have <strong>{pendingLeaveCount}</strong> leave{" "}
+          {pendingLeaveCount === 1 ? "request" : "requests"} and <strong>{pendingClaimCount}</strong>{" "}
+          {pendingClaimCount === 1 ? "claim" : "claims"} waiting for a decision.
+        </div>
+      ) : null}
+
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard
           icon={CalendarDays}
