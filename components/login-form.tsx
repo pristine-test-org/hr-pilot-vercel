@@ -16,6 +16,7 @@ export function LoginForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [remember, setRemember] = useState(true);
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -26,7 +27,7 @@ export function LoginForm() {
       const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, password, remember }),
       });
       const data = await res.json();
 
@@ -103,10 +104,23 @@ export function LoginForm() {
               </div>
             </div>
           </div>
+          <div className="mt-3 flex items-center justify-between text-sm">
+            <label className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                checked={remember}
+                onChange={(event) => setRemember(event.target.checked)}
+              />
+              Keep me signed in
+            </label>
+            <Link href="/forgot-password" className="text-muted-foreground hover:text-foreground">
+              Forgot password?
+            </Link>
+          </div>
           {error && <p className="login-error">{error}</p>}
           <button type="submit" className="login-submit" disabled={loading}>
             {loading && <Loader2 className="h-4 w-4 animate-spin" />}
-            Log in
+            Sign in
           </button>
         </form>
       </div>
