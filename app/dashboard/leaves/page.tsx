@@ -35,7 +35,7 @@ export default async function LeavesPage() {
     <div className="space-y-8">
       <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Leaves</h1>
+          <h1 className="text-3xl font-bold tracking-tight text-primary">Leave requests</h1>
           <p className="mt-1 text-muted-foreground">
             Apply for leave and keep track of your balance and requests.
           </p>
