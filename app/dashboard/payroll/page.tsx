@@ -32,7 +32,7 @@ export default async function PayrollPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight">Payroll</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Payroll runs</h1>
         <p className="mt-1 text-muted-foreground">
           Review your monthly payslips and salary breakdown.
         </p>
