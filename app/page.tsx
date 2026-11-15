@@ -76,7 +76,7 @@ export default function LandingPage() {
               Built for modern software teams
             </div>
             <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-balance md:text-6xl">
-              HR, on <span className="text-primary">autopilot</span>.
+              People ops, on <span className="text-primary">autopilot</span>.
             </h1>
             <p className="max-w-xl text-lg text-muted-foreground text-balance">
               One simple platform for your team&apos;s leaves, payroll, and expense claims - so HR
