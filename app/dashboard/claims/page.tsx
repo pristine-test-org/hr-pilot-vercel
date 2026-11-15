@@ -31,7 +31,7 @@ export default async function ClaimsPage() {
     <div className="space-y-8">
       <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Claims</h1>
+          <h1 className="text-2xl font-semibold tracking-tight">Expense claims</h1>
           <p className="mt-1 text-muted-foreground">
             Submit expense claims for food, travel, medical and more.
           </p>
