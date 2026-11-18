@@ -14,7 +14,7 @@ export default async function SettingsPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight">Settings</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Account settings</h1>
         <p className="mt-1 text-muted-foreground">Manage your profile and account security.</p>
       </div>
 
